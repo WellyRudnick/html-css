@@ -17,7 +17,7 @@
 
 html, body {
     min-height: 100vh;
-    background-color: rgba(169, 169, 169, 0.767);
+    background-color: darkgray;
     font-family: var(--fonte1);
 }
 
