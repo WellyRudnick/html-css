@@ -11,14 +11,29 @@
         table {
             width: 500px;
             border-collapse: collapse;
+            position: relative;
         }
         th, td {
             border: 1px solid black;
             padding: 5px;
         }
+        caption {
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 10px;
+            background-color: lightgray;
+        }
         thead, tfoot {
             background-color: gray;
             color: white;
+        }
+        thead > tr > th {
+            position: sticky;
+            top: -1px;
+            background-color: gray;
+        }
+        tbody  > tr:nth-child(2n){
+            background-color: rgba(173, 216, 230, 0.856);
         }
         td.num {
             text-align: right;
@@ -31,10 +46,11 @@
 <body>
     <h1>População por Estado do Brasil</h1>
     <table>
+        <caption>População das Unidades Federtivas</caption>
         <thead>
-            <th>Posição</th>
-            <th>Estado</th>
-            <th>População</th>
+            <th scope="col" style="width: 50px;">Posição</th>
+            <th scope="col">Estado</th>
+            <th scope="col" style="width: 50px;">População</th>
         </thead>
         <tbody>
             <tr>
@@ -175,7 +191,7 @@
         </tbody>
         <tfoot>
             <tr>
-                <th colspan="2">Total População</th>
+                <th  scope="row" colspan="2">Total População</th>
                 <td class="num">203.062.512</td>
             </tr>
         </tfoot>
